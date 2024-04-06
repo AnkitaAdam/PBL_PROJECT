@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+.button button {
+    padding: 10px 20px;
+    background-color: #4fa6d5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 100px;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+   min-height: 100vh;
+   /* display: flex; */
+   /* align-items: center;  */
+   /* justify-content: center; */
+   /* background: #4070f4; */
+   background-image: url(../img/bg1);
+   background-size: cover;
+   /* background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+   background: linear-gradient(to right, #864ddf, #203376); */
+}
+
+.navbar-brand span {
+   font-size: 26px;
+   font-weight: 700;
+   color: #4fa6d5;
+   margin-top: 5px;
+   padding-right: 15px;
+   padding-left: 15px;
+   /* margin-right: auto;
+   margin-left: auto; */
+   text-transform: none;
+ }
+.choice{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 90px;
+
+ }
+
+ 
+ .choice .subject 
+ {
+   width: 150px;
+   height: 40px;
+   font-size: medium;
+   border-radius: 12px;
+   margin: 0 20px;
+display: none;
+
+   
+ }
+ .choice .class 
+ {
+   width: 150px;
+   height: 40px;
+   font-size: medium;
+   border-radius: 12px;
+   margin: 0 20px;
+   display: none;
+   
+ }
+ .choice .batch 
+ {
+   width: 150px;
+   height: 40px;
+   font-size: medium;
+   border-radius: 12px;
+   margin: 0 20px;
+   display: none;
+   
+ }
+
+ .submit
+ {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+  
+ }
+
+ .calc
+ {
+
+    padding: 10px 20px;
+    background-color:#4fa6d5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: none;
+    
+
+ }
+
+ .download
+ {
+    display: flex;
+    justify-content: right;
+    margin-right: 50px;
+    
+ }
+
+ .down
+ {
+    padding: 10px 20px;
+    background-color:gray;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: none;
+    
+    
+ }
+
+ #generateClassWise{
+   font-family: 'Poppins', sans-serif; 
+ }

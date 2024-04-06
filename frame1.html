@@ -1,0 +1,79 @@
+
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+body{
+    background-color:#4fa6d5;
+    
+    color:white;
+   background-size: cover;
+   font-family: 'Poppins', sans-serif;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    font-size: 18px; /* Adjust font size as needed */
+/* Adjust padding as needed */
+   
+    color: white;
+    text-align: left;
+
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+label:hover {
+    color: black;
+    
+}
+
+img{
+    width:100px;
+    height:100px;
+    align-items: center;
+    justify-content: center;
+    margin-left:60px;
+    margin-top: 10px; 
+}
+
+</style>
+
+
+    <script>
+    function display1(){
+     parent.frame2.location.href="ut.php";
+     }
+     function display2(){
+        parent.frame2.location.href="attendenceMarks.php";
+             }
+
+        function display3(){
+            parent.frame2.location.href="assignmentMarks.php";
+            }
+            function display4(){
+            parent.frame2.location.href="tw.php";
+            }
+
+     </script>
+     </head>
+    <body >
+        <i class="fa-light fa-house"></i>
+
+       <img src="img/pictlogo.png" alt="" >
+      
+            <label onclick="display1()" style="margin-top:125px;"><i class="fa-regular fa-circle"></i> Fill UT Marks</label><br>
+            <label onclick="display2()"><i class="fa-regular fa-circle"></i> Fill Attendence Marks</label><br>
+            <label onclick="display3()"><i class="fa-regular fa-circle"></i> Fill Assignment Marks</label><br>
+            <label onclick="display4()"><i class="fa-regular fa-circle"></i> Calculate Term Work </label>
+      
+             
+    </body>
+    
+</html>

@@ -1,0 +1,324 @@
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.center button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.popup {
+  position: absolute;
+  top: -1 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 380px;
+  padding: 20px 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0 0 0 0.15);
+  border-radius: 10px;
+
+
+
+
+}
+
+.popup.active {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 20ms ease-in-out 0ms;
+
+}
+
+.popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #888;
+  color: #eee;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup .form h2 {
+  text-align: center;
+  color: #222;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.popup .form .form-element {
+  margin: 15px 0px;
+
+}
+
+.popup .form .form-element label {
+  font-size: 14px;
+  color: #222;
+
+}
+
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+
+}
+
+.popup .form .form-element button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: #222;
+  color: #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.popup .form .form-element a {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  color: #1a79ca;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+.blur-bg-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+        transition: 0.1s ease;
+    }
+
+    .show-popup .blur-bg-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .form-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        max-width: 720px;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        background: #fff;
+        border: 2px solid #fff;
+        transform: translate(-50%, -100%);
+    }
+
+    .show-popup .form-popup {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s ease, opacity 0.1s;
+    }
+
+    .form-popup .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: #878484;
+        cursor: pointer;
+    }
+
+    .form-popup .form-box {
+        display: flex;
+    }
+
+    .form-box .form-details {
+        max-width: 330px;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: url(pictname.png);
+    }
+
+    .login .form-details,
+    .signup .form-details {
+        background: url(pictname.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .form-box h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-box .form-content {
+        width: 100%;
+        padding: 35px;
+    }
+
+    form .input-field {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    form .input-field input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        padding: 0 15px;
+        font-size: 0.95rem;
+        border-radius: 3px;
+        border: 1px solid #717171;
+    }
+
+    form .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        color: #717171;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: 0.2s ease;
+    }
+
+    .input-field input:focus {
+        border-color: #00bcd4;
+    }
+
+    .input-field input:is(:focus, :valid) {
+        padding: 16px 15px 0;
+    }
+
+    .input-form .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        color: #717171;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: 0.2s ease;
+    }
+
+    .input-field input:is(:focus, :valid)~label {
+        color: #00bcd4;
+        font-size: 0.75rem;
+        transform: translateY(-120%);
+    }
+
+    .form-box a {
+        color: #00bcd4;
+        text-decoration: none;
+    }
+
+    .form-box a:hover {
+        text-decoration: underline;
+    }
+
+    .form-box .form-pass {
+        display: inline-flex;
+        margin-top: 14px;
+        font-size: 0.95rem;
+    }
+
+    .form-box .bottom-link {
+        text-align: center;
+    }
+
+    form button {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 14px 0;
+        border-radius: 3px;
+        margin: 25px 0;
+        color: #fff;
+        cursor: pointer;
+        background: #00bcd4;
+        transition: 0.2s ease;
+    }
+
+    .form button:hover {
+        background: #0097a7;
+    }
+
+    .form-box .bottom-link {
+        text-align: center;
+    }
+
+    .form-popup .signup,
+    .form-popup.show-signup .login {
+        display: none;
+    }
+
+    .form-popup.show-signup .signup {
+        display: flex;
+    }
+
+    .form-popup.show-login .login {
+        display: flex;
+    }
+
+    .form-popup.show-login .signup {
+        display: none;
+    }
+
+    @media (max-width: 760px) {
+        .form-popup {
+            width: 95%;
+        }
+
+        .form-box .form-details {
+            display: none;
+        }
+
+        .form-box .form-content {
+            padding: 30px 20px;
+        }
+    }
