@@ -207,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>   
 
             <div class="submit">
-                    <input type="submit"  value="calculate TermWork" class="calc" id="calc" name="calc">
+                    <input type="submit"  value="Calculate Term Work Marks" class="calc" id="calc" name="calc">
              </div>
 
 </form>

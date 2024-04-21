@@ -4,6 +4,8 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 body{
     background-color:#4fa6d5;
     
@@ -13,25 +15,22 @@ body{
 }
 
 label {
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
     display: block;
-    
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    
-    font-size: 18px; /* Adjust font size as needed */
-/* Adjust padding as needed */
+    font-size: 20px; 
    
     color: white;
     text-align: left;
 
     transition: background-color 0.3s ease;
-    font-family: 'Poppins', sans-serif;
+    
 }
 
 label:hover {
-    color: black;
-    
+    color: rgb(17, 3, 63);
+    background-color: #cadde8;
 }
 
 img{
@@ -50,16 +49,21 @@ img{
     function display1(){
      parent.frame2.location.href="ut.php";
      }
-     function display2(){
+    function display2(){
         parent.frame2.location.href="attendenceMarks.php";
-             }
+    }
 
-        function display3(){
-            parent.frame2.location.href="assignmentMarks.php";
-            }
-            function display4(){
-            parent.frame2.location.href="tw.php";
-            }
+    function display3(){
+        parent.frame2.location.href="assignmentMarks.php";
+    }
+    function display4(){
+        parent.frame2.location.href="tw.php";
+    }
+    function display5(){
+        parent.frame2.location.href="mark_desc.html";
+    }
+
+
 
      </script>
      </head>
@@ -71,8 +75,8 @@ img{
             <label onclick="display1()" style="margin-top:125px;"><i class="fa-regular fa-circle"></i> Fill UT Marks</label><br>
             <label onclick="display2()"><i class="fa-regular fa-circle"></i> Fill Attendence Marks</label><br>
             <label onclick="display3()"><i class="fa-regular fa-circle"></i> Fill Assignment Marks</label><br>
-            <label onclick="display4()"><i class="fa-regular fa-circle"></i> Calculate Term Work </label>
-      
+            <label onclick="display4()"><i class="fa-regular fa-circle"></i> Calculate Term Work </label><br>
+            <label onclick="display5()"><i class="fa-regular fa-circle"></i> Search for a student details </label>
              
     </body>
     

@@ -100,7 +100,7 @@ include 'config.php';
 </div>   
 
             <div class="submit">
-                    <input type="submit"  value="calculate TermWork" class="calc" id="calc">
+                    <input type="submit"  value="Calculate Term Work" class="calc" id="calc">
              </div>
 
 </form>

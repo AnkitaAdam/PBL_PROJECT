@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Page</title>
+    <link rel="stylesheet" href="css/mark_desc2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <form action="" method="POST">
+    <section class="search">
+        <div class="search-container">
+
+            <input type="text" id="rollNo" placeholder="Enter Roll No">
+
+            <select name="subject" class="subject" id="subject">
+            <option selected disabled>Choose Subject</option>
+                <option value="EM3">EM3</option>
+                <option value="DMS">DMS</option>
+                <option value="CG">CG</option>
+                <option value="PA">PA</option>
+                <option value="PBL">PBL</option>
+          </select>
+            <input type="submit" id="searchBtn"  value="Search Marks" >
+        </div>
+    </section>
+</form>
+    <section class="student-details" style="display: none;">
+        <div class="container1">
+            <div class="student-info">
+                <div class="detail-container">
+                    <label for="name">Name: </label>
+                    <span id="name"></span>
+                </div>
+                <div class="detail-container">
+                    <label for="rollNo">Roll No:</label>
+                    <span id="rolll"></span>
+                </div>
+                <div class="detail-container">
+                    <label for="batch1">Batch:</label>
+                    <span id="batch1"></span>
+                </div>
+                <div class="detail-container">
+                    <label for="subject">Subject:</label>
+                    <span id="subb"></span>
+                </div>
+            </div> 
+        </div>
+    </section>
+    
+    <section class="cards">
+        <div class="container">
+            <div class="card-container">
+                <div class="card">
+                    <h3  style="text-decoration: underline;">Unit Test Marks</h3>
+                    <h3>Out of 90:</h3>
+                    <span id="unitTestMarks"></span>
+                    <h3>Out of 20:</h3>
+                    <span id="unitTestConvertedMarks"></span>
+                </div>
+                <div class="card2">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="card">
+                    <h3 style="text-decoration: underline;">Assignment Marks</h3>
+                    <h3>Total Marks:</h3>
+                    <span id="assignmentMarks"></span>
+                    <h3>Out of 60:</h3>
+                    <span id="assignmentConvertedMarks"></span>
+
+                </div>
+                <div class="card2">
+                    <i class="fas fa-plus"></i>
+                </div>
+
+                <div class="card">
+                    <h3 style="text-decoration: underline;">Attendance Marks</h3>
+                    <h3>Attendance:</h3>
+                    <span id="attendanceMarks"></span>
+                    <h3>Out of 20:</h3>
+                    <span id="attendanceConvertedMarks"></span>
+                </div>
+                  <div class="card2">
+                    <i class="fa-solid fa-equals"></i>
+                </div>
+                <div class="card">
+                    <h3 style="text-decoration: underline;">Termwork Marks</h3>
+                    <h3>Out of 100:</h3>
+                    <span id="twMarks"></span>
+                    <h3>Out of 25:</h3>
+                    <span id="twConvertedMarks"></span>
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- <script src="js/mark_desc.js"></script> -->
+
+
+    <script>
+
+
+function validate2() {
+    var flag = true;
+    var roll = document.getElementById('rollNo');
+
+  
+    var subje = document.getElementById('subject');
+
+    if (roll.value===''|| roll.value === 'Enter Roll No' || subje.value === 'Choose Subject') {
+        alert("Please enter the details first.");
+        flag = false;
+    }
+
+    return flag; // Return true if validation passes, false otherwise
+}
+
+
+$(document).ready(function(){
+        // Click event handler for submit marks button
+        $("#searchBtn").click(function(event){
+            // Get the selected subject
+            event.preventDefault();
+            
+            if(validate2()){
+                console.log("hi");
+                // Array to store marks data
+                var rollNo;
+                var subject;
+                // Iterate over each row in the table to collect marks and roll numbers
+                rollNo=document.getElementById("rollNo").value;
+                subject=document.getElementById("subject").value;
+
+                // Send marks data to PHP script using AJAX
+                $.ajax({
+                    url: "searchStudent.php",
+                    type: "POST",
+                    data: {rollNo: rollNo,subject:subject},
+                    success: function(response){
+                        // alert(data)
+                        // alert(response);
+                        var responseData = JSON.parse(response);
+                        if(responseData.error) {
+                            // If error, alert the error message
+                            alert(responseData.error);
+                            return;
+                        } else {
+                            // If no error, display the data
+                            var studentData1 = JSON.parse(response);
+                            console.log(studentData1); // For testing, you can log the data
+                            // Here you can use the studentData as needed
+                            // alert("Name: " + studentData.name + "\nRoll No: " + studentData.rollNo + "\nBatch: " + studentData.batch + "\nSubject: " + studentData.subject);
+                            document.querySelector(".student-details").style.display = "block";
+
+                            // Update student details
+                            document.getElementById("name").textContent = studentData1.name;
+                            document.getElementById("rolll").textContent = studentData1.rollNo;
+                            document.getElementById("batch1").textContent = studentData1.batch;
+                            document.getElementById("subb").textContent = studentData1.subject;
+                            
+                            
+                            document.getElementById("unitTestMarks").textContent = studentData1.ut_marks;
+                            document.getElementById("unitTestConvertedMarks").textContent = studentData1.ut_converted_marks;
+                        
+                            document.getElementById("assignmentMarks").textContent = studentData1.ass_marks;
+                            document.getElementById("assignmentConvertedMarks").textContent = studentData1.ass_converted_marks;
+                            
+                            document.getElementById("attendanceMarks").textContent = studentData1.att;
+                            document.getElementById("attendanceConvertedMarks").textContent = studentData1.att_marks;
+                            
+                            document.getElementById("twMarks").textContent = studentData1.tw_marks;
+                            document.getElementById("twConvertedMarks").textContent = studentData1.tw_converted_marks;
+                            
+
+                            // document.getElementById("assignmentMarks").innerText = "77";
+                        }
+                    }
+                });
+            }
+        });
+});
+    </script>
+
+</body>
+</html>

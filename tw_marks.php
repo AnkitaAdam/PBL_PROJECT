@@ -89,8 +89,8 @@ if(isset($_POST['grp_name'])) {
             echo "Please enter unit test marks, assignment marks, and attendance marks for the selected course first.";
         }
     }catch(Exception $e){
-            echo $e;
-            // echo "Termwork is already calculated";
+            // echo $e;
+            echo "Termwork is already calculated";
     }
         
     }else if($grp_name=="E9" ||$grp_name=="F9" || $grp_name=="G9" ||$grp_name=="H9" ||$grp_name=="E10" ||$grp_name=="F10" ||$grp_name=="G10" ||$grp_name=="H10" ||$grp_name=="E11" ||$grp_name=="F11" ||$grp_name=="G11" ||$grp_name=="H11"){

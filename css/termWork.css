@@ -29,6 +29,8 @@ body{
    /* background: #4070f4; */
    background-image: url(../img/bg1);
    background-size: cover;
+   
+   font-family: 'Poppins', sans-serif;
    /* background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
    background: linear-gradient(to right, #864ddf, #203376); */
 }
@@ -50,7 +52,9 @@ body{
     gap: 200px;
     margin-top: 90px;
 
+    font-family: 'Poppins', sans-serif;
  }
+
 
  
  .choice .subject 
@@ -61,6 +65,8 @@ body{
    border-radius: 12px;
    margin: 0 20px;
 display: none;
+
+font-family: 'Poppins', sans-serif;
 
    
  }
@@ -73,9 +79,12 @@ display: none;
    margin: 0 20px;
    display: none;
    
+   font-family: 'Poppins', sans-serif;
  }
  .choice .batch 
  {
+   
+   font-family: 'Poppins', sans-serif;
    width: 150px;
    height: 40px;
    font-size: medium;
@@ -91,11 +100,13 @@ display: none;
     justify-content: center;
     margin-top: 150px;
   
+    font-family: 'Poppins', sans-serif;
  }
 
  .calc
  {
-
+   
+   font-family: 'Poppins', sans-serif;
     padding: 10px 20px;
     background-color:#4fa6d5;
     color: #ffffff;
@@ -115,6 +126,7 @@ display: none;
     justify-content: right;
     margin-right: 50px;
     
+    font-family: 'Poppins', sans-serif;
  }
 
  .down
@@ -129,6 +141,7 @@ display: none;
     transition: background-color 0.3s ease;
     display: none;
     
+    font-family: 'Poppins', sans-serif;
     
  }
 
